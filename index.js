@@ -14,7 +14,7 @@ const app = express();  // Create an Express application
  
 
 const corsOptions = {
-  origin: 'https://haqatoon-fronted.vercel.app/', // React app ka URL
+  origin: 'https://haqatoon-fronted.vercel.app', // React app ka URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,  // Agar cookies ya authentication use kar rahe ho
@@ -39,7 +39,7 @@ mongoose.connect(process.env.MONGODB_URI)
 
 // Basic route for checking if the server is running
 app.get("/", (req, res) => {
-  res.status(200).send("Server is running Saifullah");
+  res.status(200).send("Server is running Saifullah 3000");
 });
 
 // Route handlers
