@@ -15,21 +15,8 @@ const app = express();  // Create an Express application
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow only specific origins or allow all origins by using '*' (not recommended in production)
-      const allowedOrigins = [
-        "https://haatoon-fronted-six.vercel.app", 
-         
-      ];
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);  // Allow request
-      } else {
-        callback(new Error("Not allowed by CORS"));  // Reject request
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: "https://haqatoon-fronted.vercel.app/", // Replace with your frontend URL
+    credentials: true, // Allow credentials like cookies
   })
 );
 
@@ -41,7 +28,7 @@ console.log("MongoDB URI=>", process.env.MONGODBURI);  // Log MongoDB URI for ch
 // MongoDB connection
 mongoose.connect(process.env.MONGODBURI)
   .then(() => {
-    console.log("MongoDB connected");  // If connected to MongoDB  
+    console.log("MongoDB connected");  // If connected to MongoDB
   })
   .catch((err) => {
     console.log("Error connecting to MongoDB:", err);  // If there's an error in connecting
@@ -49,7 +36,7 @@ mongoose.connect(process.env.MONGODBURI)
 
 // Basic route for checking if the server is running
 app.get("/", (req, res) => {
-  res.status(200).send("Server is running Saifullah 3008 ");
+  res.status(200).send("Server is running Saifullah");
 });
 
 // Route handlers
