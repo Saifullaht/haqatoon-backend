@@ -26,10 +26,10 @@ app.use(cors(corsOptions));
 
 app.use(express.json()); // Parse incoming JSON requests
 
-console.log("MongoDB URI=>", process.env.MONGODBURI);  // Log MongoDB URI for checking
+console.log("MongoDB URI=>", process.env.MONGODB_URI);  // Log MongoDB URI for checking
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODBURI)
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("MongoDB connected");  // If connected to MongoDB
   })
