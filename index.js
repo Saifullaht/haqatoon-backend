@@ -14,7 +14,10 @@ const app = express();  // Create an Express application
  
 
 app.use(
-  cors( )
+  cors({
+    origin: "https://haqatoon-fronted.vercel.app", // Replace with your frontend URL
+    credentials: true, // Allow credentials like cookies
+  })
 );
 
 
