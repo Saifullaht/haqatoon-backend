@@ -14,7 +14,7 @@ const app = express();  // Create an Express application
  
 
 const corsOptions = {
-  origin: 'https://haqatoon-fronted.vercel.app', // React app ka URL
+  origin: 'https://haqatoon-fronted.vercel.app/', // React app ka URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,  // Agar cookies ya authentication use kar rahe ho
