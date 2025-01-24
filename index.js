@@ -8,17 +8,20 @@ import DonarsInfoRoutes from "./routers/Donar.js";
 
 dotenv.config();  // Load environment variables from .env file
 
-const PORT = process.env.PORT || 3008;  // Define port number
+const PORT = process.env.PORT || 3007;  // Define port number
 const app = express();  // Create an Express application
 
  
 
-app.use(
-  cors({
-    origin: "https://haqatoon-fronted.vercel.app", // Replace with your frontend URL
-    credentials: true, // Allow credentials like cookies
-  })
-);
+const corsOptions = {
+  origin: 'https://haqatoon-fronted.vercel.app', // React app ka URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,  // Agar cookies ya authentication use kar rahe ho
+};
+
+// Use CORS middleware
+app.use(cors(corsOptions));
 
 
 app.use(express.json()); // Parse incoming JSON requests
