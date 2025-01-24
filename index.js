@@ -41,7 +41,7 @@ console.log("MongoDB URI=>", process.env.MONGODBURI);  // Log MongoDB URI for ch
 // MongoDB connection
 mongoose.connect(process.env.MONGODBURI)
   .then(() => {
-    console.log("MongoDB connected");  // If connected to MongoDB
+    console.log("MongoDB connected");  // If connected to MongoDB  
   })
   .catch((err) => {
     console.log("Error connecting to MongoDB:", err);  // If there's an error in connecting
@@ -49,7 +49,7 @@ mongoose.connect(process.env.MONGODBURI)
 
 // Basic route for checking if the server is running
 app.get("/", (req, res) => {
-  res.status(200).send("Server is running Saifullah");
+  res.status(200).send("Server is running Saifullah 3008 ");
 });
 
 // Route handlers
